@@ -2,7 +2,91 @@ footer {
     margin: 0 auto;
     position: relative;
     background-color: #373737;
-    border-radius: 20px 20px 0 0;
     top: 180px;
-    height: 100px;
+    height: 150px ;
+    max-height: 140px;
 }
+.logo-footer {
+    position: absolute;
+    width: 85px;
+    height: 100px;
+    margin: 20px;
+}
+
+.contacts {
+    margin-top: 20px;
+}
+
+.contacts h4{
+    padding-bottom: 20px;
+}
+
+.social-network {
+    margin: 20px;
+}
+
+.footer-content {
+    color: white;
+    position: relative;
+    left: 100px;
+    max-width: 1140px;
+}
+
+.phone {
+    word-spacing: 3px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.phone p {
+    color: white;
+    line-height: 0px;
+    font-size: 14px;
+
+}
+
+.phone a {
+    text-decoration: none;
+    color: white;
+    line-height: 15px;
+    font-size: 14px;
+    width: 140px;
+}
+
+.phone i {
+    line-height: 0px;
+    font-size: 16px;
+    margin-right: 5px;
+
+}
+
+.social-network_content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.social-network_content i {
+    font-size: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+    color: white;
+
+}
+
+.social-network_content i:hover {
+    color: dodgerblue;
+    transition: all 0.5s ease;
+}
+
+.author {
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 10px;
+}
+
+
+
