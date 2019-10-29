@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './RecipesSectionItem.css';
 import Dish from '../../img/dish.png'
 import Like from '../../img/like.png'
+import {
+    Link
+} from "react-router-dom";
 import RecipePage from "../RecipePage/RecipePage";
 
 class RecipesSectionItem extends Component {
@@ -12,24 +15,25 @@ class RecipesSectionItem extends Component {
             recipeTitle: this.props.title,
             recipeDescription: this.props.description,
             recipeImage: this.props.image,
+            link: this.props.link,
         };
-
-        this.getRecipeData = this.getRecipeData.bind(this);
     }
-
-    getRecipeData = () => {
-        localStorage.setItem('recipeId', this.state.recipeId);
-        localStorage.setItem('recipeTitle', this.state.recipeTitle);
-        localStorage.setItem('recipeDescription', this.state.recipeDescription);
-        localStorage.setItem('recipeImage', this.state.recipeImage);
-    };
 
     render() { 
         return (
             <section className="recipes-section-item col-xl-5">
-                <img className="recipe-image" src={Dish} alt="qwe" />
+                <img
+                    className="recipe-image"
+                    src={Dish}
+                    alt="qwe"
+                />
                 <figcaption >
-                    <a href="/recipe" onClick={this.getRecipeData} className="recipe-title">Классический крабовый салат с огурцом и мидиями</a>
+                    <Link
+                        to={this.state.link}
+                        className="recipe-title"
+                    >
+                        Классический крабовый салат с огурцом и мидиями
+                    </Link>
                     <div className="recipe-description">
                         Здесь описывается рецепт...Здесь описывается рецепт...Здесь описывается рецепт...
                     </div>

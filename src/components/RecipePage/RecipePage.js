@@ -1,4 +1,5 @@
 import React from 'react';
+import RecipesAPI from "../../helpers/recipes";
 import './RecipePage.css';
 
 class RecipePage extends React.Component{
@@ -13,23 +14,26 @@ class RecipePage extends React.Component{
     }
 
     render() {
-        const id = localStorage.getItem('recipeId');
-        const title = localStorage.getItem('recipeTitle');
-        const image = localStorage.getItem('recipeImage');
-        const description = localStorage.getItem('recipeDescription');
+        const recipe = RecipesAPI.get(
+            parseInt(this.props.match.params.id, 10)
+        );
+
+        if(!recipe) {
+            return <div>Sorry, but the recipe was not found</div>
+        }
 
         return (
             <React.Fragment>
-                <header>{id}</header>
+                <header>{recipe.id}</header>
                 <main>
                     <figure>
-                        <img src={image} />
+                        <img src={recipe.image} />
                         <figcaption className="recipe-title">
-                            {title}
+                            {recipe.title}
                         </figcaption>
                     </figure>
                     <div className="recipe-description">
-                        {description}
+                        {recipe.description}
                     </div>
                 </main>
                 <footer></footer>

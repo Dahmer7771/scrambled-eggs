@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './RecipesSection.css';
-
+import RecipesAPI from '../../helpers/recipes'
 import RecipesSectionItem from '../RecipesSectionItem/RecipesSectionItem';
 import RecipePage from "../RecipePage/RecipePage";
 
@@ -21,13 +21,14 @@ class RecipesSection extends Component {
                         <div className="popular">Популярные</div>
                 </div>
                 <div className="row justify-content-around no-gutters">
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map(recipe => {
+                    {RecipesAPI.all().map(recipe => {
                         return (
                             <RecipesSectionItem
-                                id={recipe}
-                                title={`recipe ${recipe}`}
-                                description={`description ${recipe}`}
-                                image={`image`}
+                                id={recipe.id}
+                                title={recipe.title}
+                                description={recipe.description}
+                                image={recipe.image}
+                                link={`recipes/${recipe.id}`}
                             />
                         )
                     })}
