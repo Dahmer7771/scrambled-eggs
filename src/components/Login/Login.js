@@ -85,8 +85,14 @@ class Login extends Component {
                                 <div className="wrap-input100 validate-input" data-validate="Enter username">
                                     <input className="input100" type="text" name="username" onChange={this.handleFormInput} placeholder="Username"/>
                                 </div>
+                                <div className="error-validate">
+                                    error validate
+                                </div>
                                 <div className="wrap-input100 validate-input" data-validate="Enter password">
                                     <input className="input100" type="password" name="password" onChange={this.handleFormInput} placeholder="Password"/>
+                                </div>
+                                <div className="error-validate">
+                                    error validate
                                 </div>
                                 <div className="contact100-form-checkbox">
                                     <input className="input-checkbox100" id="ckb1" type="checkbox" name="remember-me"/>
@@ -113,13 +119,27 @@ class Login extends Component {
                                 <div className="wrap-input100 validate-input" data-validate="Enter username">
                                     <input className="input100" type="text" name="username" onChange={this.handleFormInput} placeholder="Username"/>
                                 </div>
+                                <div className="error-validate">
+                                    error validate
+                                </div>
                                 <div className="wrap-input100 validate-input" data-validate="Enter username">
                                     <input className="input100" type="email" name="email" onChange={this.handleFormInput} placeholder="Email"/>
+                                </div>
+                                <div className="error-validate">
+                                    error validate
                                 </div>
                                 <div className="wrap-input100 validate-input" data-validate="Enter password">
                                     <input className="input100" type="password" name="password" onChange={this.handleFormInput} placeholder="Password"/>
                                 </div>
-
+                                <div className="error-validate">
+                                    error validate
+                                </div>
+                                <div className="wrap-input100 validate-input" data-validate="Enter password">
+                                    <input className="input100" type="password" name="password" onChange={this.handleFormInput} placeholder="Password Confirmations"/>
+                                </div>
+                                <div className="error-validate">
+                                    error validate
+                                </div>
                                 <div className="container-login100-form-btn">
                                     <button className="login100-form-btn">
                                         Create
