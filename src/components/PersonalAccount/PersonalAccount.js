@@ -3,6 +3,7 @@ import './PersonalAccount.css';
 import Editor from 'draft-js-editor';
 import { EditorState, convertFromRaw } from 'draft-js';
 import TextEditor from '../TextEditor/TextEditor';
+import Footer from "../Footer/Footer";
 
 class PersonalAccount extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class PersonalAccount extends React.Component {
                 <main className="main-container">
                     <div className="container">
                         <div className="row">
-                            <div className="menu col-md-3">
+                            <div className="menu col-md-3 navigation">
                                 <nav>
                                     <ul>
                                         <li><a href="#">Пункт меню 1</a></li>
@@ -55,9 +56,7 @@ class PersonalAccount extends React.Component {
                         </div>
                     </div>
                 </main>
-                <footer>
-                    {/*{content}*/}
-                </footer>
+                <Footer/>
             </React.Fragment>
         )
     }

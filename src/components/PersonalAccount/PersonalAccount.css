@@ -1,8 +1,6 @@
-
-
 .menu {
     height: 200px;
-    background-color: azure;
+
 
 
 }
@@ -16,7 +14,39 @@
 
 
 .main-container {
-    margin-top: 80px;
+    margin-top: 100px;
     flex: 1 0 auto;
 
 }
+.navigation li {
+    background-color: #AAAAAA;
+    margin-top: 5px;
+    border-radius: 3px;
+    color: white;
+}
+
+.navigation li:hover {
+    background-color: white;
+    margin-top: 5px;
+    border-radius: 3px;
+    color: #262626;
+    border: 1px solid black;
+}
+
+.navigation li:hover  a{
+    background-color: white;
+    margin-top: 5px;
+    border-radius: 3px;
+    color: #262626;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation a:hover {
+    text-decoration: none;
+    color: black;
+}
+
