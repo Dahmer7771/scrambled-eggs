@@ -3,28 +3,29 @@
     top: 100px;
 }
 
-.title {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-
-}
-
-.dish-img {
-    position: relative;
-    width: 400px;
-    border-radius: 10px;
+.recipe-block img {
+    width: 350px;
+    border-radius: 5px;
     box-shadow: 8px 8px 15px rgba(55, 55, 55, 0.64);
 }
 
-.recipe-title {
-    margin: 0 auto;
+.recipe-description {
+    margin-top: 0;
 }
 
-.recipe-description {
-    margin-top: 50px;
-    margin-left: 20px;
-    text-align: justify;
+.recipe-description h6{
+    color: #676767;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.32);
+}
+
+.recipe-description h2{
+    color: #000000;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.32);
+}
+
+.recipe-title {
+    position: relative;
+    text-align: left;
+    left: 0px;
+    margin-bottom: 20px;
 }
