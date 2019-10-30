@@ -9,6 +9,57 @@ class Login extends Component {
         this.state = {
             loginVisibility: "",
             registrationVisibility: "styleHidden",
+
+            errorMessage: {
+                usernameLogin: "",
+                passwordLogin: "",
+                usernameRegistration: "",
+                emailRegistration: "",
+                passwordRegistration: "",
+                passwordConfirmRegistration: "",
+            },
+
+            errorVisibility: {
+                usernameLogin: {
+                    visibility: "hidden",
+                },
+                passwordLogin: {
+                    visibility: "hidden",
+                },
+                usernameRegistration: {
+                    visibility: "hidden",
+                },
+                emailRegistration: {
+                    visibility: "hidden",
+                },
+                passwordRegistration: {
+                    visibility: "hidden",
+                },
+                passwordConfirmRegistration: {
+                    visibility: "hidden",
+                },
+            },
+
+            errorBorder: {
+                usernameLogin: {
+                    borderBottom: "2px solid rgba(255,255,255,0.24)",
+                },
+                passwordLogin: {
+                    borderBottom: "2px solid rgba(255,255,255,0.24)",
+                },
+                usernameRegistration: {
+                    borderBottom: "2px solid rgba(255,255,255,0.24)",
+                },
+                emailRegistration: {
+                    borderBottom: "2px solid rgba(255,255,255,0.24)",
+                },
+                passwordRegistration: {
+                    borderBottom: "2px solid rgba(255,255,255,0.24)",
+                },
+                passwordConfirmRegistration: {
+                    borderBottom: "2px solid rgba(255,255,255,0.24)",
+                },
+            },
         };
 
         this.showLoginForm = this.showLoginForm.bind(this);
@@ -21,12 +72,51 @@ class Login extends Component {
             name,
             value,
         } = e.target;
+        const {
+            errorMessage,
+            errorBorder,
+            errorVisibility,
+        } = this.state;
         const isValid = formValidation(name, value);
 
         if(isValid.status === 'success') {
-            console.log("ZBS");
+
+            this.setState({
+                errorMessage: {
+                    ...errorMessage,
+                    [name]: "",
+                },
+                errorVisibility: {
+                    ...errorVisibility,
+                    [name]: {
+                        visibility: "hidden",
+                    }
+                },
+                errorBorder: {
+                    ...errorBorder,
+                    [name]: {
+                        borderBottom: "2px solid rgba(255,255,255,0.24)",
+                    }
+                }
+            })
         } else {
-            console.log("BAN");
+            this.setState({
+                errorMessage: {
+                    ...errorMessage,
+                    [name]: isValid.error,
+                },
+                errorVisibility: {
+                    ...errorVisibility,
+                    [name]: {
+                        visibility: "visible",
+                    }
+                },
+                errorBorder: {
+                    [name]: {
+                        borderBottom: "2px solid red"
+                    }
+                }
+            })
         }
     };
 
@@ -60,6 +150,9 @@ class Login extends Component {
         const {
             loginVisibility,
             registrationVisibility,
+            errorBorder,
+            errorMessage,
+            errorVisibility,
         } = this.state;
 
         return (
@@ -82,17 +175,17 @@ class Login extends Component {
                                 <span className="login100-form-title p-b-34 p-t-27">
 						            Log in
 					            </span>
-                                <div className="wrap-input100 validate-input" data-validate="Enter username">
-                                    <input className="input100" type="text" name="username" onChange={this.handleFormInput} placeholder="Username"/>
+                                <div className="wrap-input100 validate-input" data-validate="Enter username" style={errorBorder.usernameLogin}>
+                                    <input className="input100" type="text" name="usernameLogin" onChange={this.handleFormInput} placeholder="Username"/>
                                 </div>
-                                <div className="error-validate">
-                                    error validate
+                                <div className="error-validate" style={errorVisibility.usernameLogin}>
+                                    {errorMessage.usernameLogin}
                                 </div>
-                                <div className="wrap-input100 validate-input" data-validate="Enter password">
-                                    <input className="input100" type="password" name="password" onChange={this.handleFormInput} placeholder="Password"/>
+                                <div className="wrap-input100 validate-input" data-validate="Enter password" style={errorBorder.passwordLogin}>
+                                    <input className="input100" type="password" name="passwordLogin" onChange={this.handleFormInput} placeholder="Password"/>
                                 </div>
-                                <div className="error-validate">
-                                    error validate
+                                <div className="error-validate" style={errorVisibility.passwordLogin}>
+                                    {errorMessage.passwordLogin}
                                 </div>
                                 <div className="contact100-form-checkbox">
                                     <input className="input-checkbox100" id="ckb1" type="checkbox" name="remember-me"/>
@@ -116,29 +209,29 @@ class Login extends Component {
                                 <span className="login100-form-title p-b-34 p-t-27">
                                     Registration
 					            </span>
-                                <div className="wrap-input100 validate-input" data-validate="Enter username">
-                                    <input className="input100" type="text" name="username" onChange={this.handleFormInput} placeholder="Username"/>
+                                <div className="wrap-input100 validate-input" data-validate="Enter username" style={errorBorder.usernameRegistration}>
+                                    <input className="input100" type="text" name="usernameRegistration" onChange={this.handleFormInput} placeholder="Username"/>
                                 </div>
-                                <div className="error-validate">
-                                    error validate
+                                <div className="error-validate" style={errorVisibility.usernameRegistration}>
+                                    {errorMessage.usernameRegistration}
                                 </div>
-                                <div className="wrap-input100 validate-input" data-validate="Enter username">
-                                    <input className="input100" type="email" name="email" onChange={this.handleFormInput} placeholder="Email"/>
+                                <div className="wrap-input100 validate-input" data-validate="Enter username" style={errorBorder.emailRegistration}>
+                                    <input className="input100" type="email" name="emailRegistration" onChange={this.handleFormInput} placeholder="Email"/>
                                 </div>
-                                <div className="error-validate">
-                                    error validate
+                                <div className="error-validate" style={errorVisibility.emailRegistration}>
+                                    {errorMessage.emailRegistration}
                                 </div>
-                                <div className="wrap-input100 validate-input" data-validate="Enter password">
-                                    <input className="input100" type="password" name="password" onChange={this.handleFormInput} placeholder="Password"/>
+                                <div className="wrap-input100 validate-input" data-validate="Enter password" style={errorBorder.passwordRegistration}>
+                                    <input className="input100" type="password" name="passwordRegistration" onChange={this.handleFormInput} placeholder="Password"/>
                                 </div>
-                                <div className="error-validate">
-                                    error validate
+                                <div className="error-validate" style={errorVisibility.passwordRegistration}>
+                                    {errorMessage.passwordRegistration}
                                 </div>
-                                <div className="wrap-input100 validate-input" data-validate="Enter password">
-                                    <input className="input100" type="password" name="password" onChange={this.handleFormInput} placeholder="Password Confirmations"/>
+                                <div className="wrap-input100 validate-input" data-validate="Enter password" style={errorBorder.passwordConfirmRegistration}>
+                                    <input className="input100" type="password" name="passwordConfirmRegistration" onChange={this.handleFormInput} placeholder="Password Confirmations"/>
                                 </div>
-                                <div className="error-validate">
-                                    error validate
+                                <div className="error-validate" style={errorVisibility.passwordConfirmRegistration}>
+                                    {errorMessage.passwordConfirmRegistration}
                                 </div>
                                 <div className="container-login100-form-btn">
                                     <button className="login100-form-btn">
