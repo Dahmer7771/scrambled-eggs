@@ -15,11 +15,33 @@ class RecipesSectionItem extends Component {
             recipeTitle: this.props.title,
             recipeDescription: this.props.description,
             recipeImage: this.props.image,
-            link: this.props.link,
+                link: this.props.link,
+            like: "zmdi zmdi-favorite-outline",
         };
     }
 
-    render() { 
+    showLike = () => {
+        const {
+            like,
+        } = this.state;
+
+        if (like === "zmdi zmdi-favorite-outline") {
+            this.setState( {
+                like: "zmdi zmdi-favorite",
+            })
+        } else {
+            this.setState({
+                like: "zmdi zmdi-favorite-outline"
+            })
+        }
+    }
+
+    render() {
+        const {
+            like,
+        } = this.state;
+
+
         return (
             <section className="recipes-section-item col-xl-5">
                 <img
@@ -38,8 +60,7 @@ class RecipesSectionItem extends Component {
                         Здесь описывается рецепт...Здесь описывается рецепт...Здесь описывается рецепт...
                     </div>
                 </figcaption>
-                <div className="like">
-                    <img src={Like} alt=""/>
+                <div className={`like ${like}`}  onClick={this.showLike}>
                 </div>
             </section>
         );

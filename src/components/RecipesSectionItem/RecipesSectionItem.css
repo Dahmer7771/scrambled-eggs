@@ -54,9 +54,22 @@
     border-top: 1px solid #cdcdcd ;
     z-index: 0;
 }
-.like img {
+
+.zmdi-favorite-outline:before {
     position: absolute;
     right: 0;
-    margin: 8px;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.zmdi-favorite:before {
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-top: 5px;
+    cursor: pointer;
 }
 
