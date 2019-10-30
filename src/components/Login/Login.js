@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { formValidation } from "../../helpers/validation";
 import './Login.css';
-import BGimage from '../../img/bg-01.jpg'
+import BGimage from '../../img/bg-01.jpg';
 
 class Login extends Component {
     constructor(props) {
@@ -12,7 +13,22 @@ class Login extends Component {
 
         this.showLoginForm = this.showLoginForm.bind(this);
         this.showRegistrationForm = this.showRegistrationForm.bind(this);
+        this.handleFormInput = this.handleFormInput.bind(this);
     }
+
+    handleFormInput = (e) => {
+        const {
+            name,
+            value,
+        } = e.target;
+        const isValid = formValidation(name, value);
+
+        if(isValid.status === 'success') {
+            console.log("ZBS");
+        } else {
+            console.log("BAN");
+        }
+    };
 
     showLoginForm = () => {
         const {
@@ -26,7 +42,6 @@ class Login extends Component {
             })
         }
     };
-
 
     showRegistrationForm = () => {
         const {
@@ -68,10 +83,10 @@ class Login extends Component {
 						            Log in
 					            </span>
                                 <div className="wrap-input100 validate-input" data-validate="Enter username">
-                                    <input className="input100" type="text" name="username" placeholder="Username"/>
+                                    <input className="input100" type="text" name="username" onChange={this.handleFormInput} placeholder="Username"/>
                                 </div>
                                 <div className="wrap-input100 validate-input" data-validate="Enter password">
-                                    <input className="input100" type="password" name="pass" placeholder="Password"/>
+                                    <input className="input100" type="password" name="password" onChange={this.handleFormInput} placeholder="Password"/>
                                 </div>
                                 <div className="contact100-form-checkbox">
                                     <input className="input-checkbox100" id="ckb1" type="checkbox" name="remember-me"/>
@@ -96,13 +111,13 @@ class Login extends Component {
                                     Registration
 					            </span>
                                 <div className="wrap-input100 validate-input" data-validate="Enter username">
-                                    <input className="input100" type="text" name="username" placeholder="Username"/>
+                                    <input className="input100" type="text" name="username" onChange={this.handleFormInput} placeholder="Username"/>
                                 </div>
                                 <div className="wrap-input100 validate-input" data-validate="Enter username">
-                                    <input className="input100" type="email" name="email" placeholder="Email"/>
+                                    <input className="input100" type="email" name="email" onChange={this.handleFormInput} placeholder="Email"/>
                                 </div>
                                 <div className="wrap-input100 validate-input" data-validate="Enter password">
-                                    <input className="input100" type="password" name="pass" placeholder="Password"/>
+                                    <input className="input100" type="password" name="password" onChange={this.handleFormInput} placeholder="Password"/>
                                 </div>
 
                                 <div className="container-login100-form-btn">

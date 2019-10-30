@@ -9,12 +9,7 @@ import CustomHR from "../CustomHR/CustomHR";
 class RecipePage extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {
-            id: this.props.id,
-            title: this.props.title,
-            description: this.props.description,
-            image: this.props.image,
-        }
+        this.state = {}
     }
 
     render() {
