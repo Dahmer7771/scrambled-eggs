@@ -10,6 +10,15 @@ class Login extends Component {
             loginVisibility: "",
             registrationVisibility: "styleHidden",
 
+            inputValues: {
+                usernameLogin: "",
+                passwordLogin: "",
+                usernameRegistration: "",
+                emailRegistration: "",
+                passwordRegistration: "",
+                passwordConfirmRegistration: "",
+            },
+
             errorMessage: {
                 usernameLogin: "",
                 passwordLogin: "",
@@ -76,12 +85,36 @@ class Login extends Component {
             errorMessage,
             errorBorder,
             errorVisibility,
+            inputValues,
         } = this.state;
         const isValid = formValidation(name, value);
 
         if(isValid.status === 'success') {
-
+            if(name === "passwordConfirmRegistration" && value !== inputValues.passwordRegistration) {
+                this.setState({
+                    errorMessage: {
+                        ...errorMessage,
+                        [name]: "passwords does not match",
+                    },
+                    errorVisibility: {
+                        ...errorVisibility,
+                        [name]: {
+                            visibility: "visible",
+                        }
+                    },
+                    errorBorder: {
+                        [name]: {
+                            borderBottom: "2px solid red"
+                        }
+                    }
+                });
+                return;
+            }
             this.setState({
+                inputValues: {
+                    ...inputValues,
+                    [name]: value,
+                },
                 errorMessage: {
                     ...errorMessage,
                     [name]: "",

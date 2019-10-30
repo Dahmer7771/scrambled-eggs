@@ -93,6 +93,17 @@ export const formValidation = (fieldName, value) => {
                 }
             }
             return error(fieldName, value, MESSAGES.PASSWORD_MESSAGE.invalidPassword);
+        case field.PASSWORD_CONFIRM_REGISTRATION:
+            if(regExp.password.test(value)) {
+                if(value.length < 20 && value.length > 5) {
+                    return success(fieldName, value);
+                } else if(value.length > 20) {
+                    return error(fieldName, value, MESSAGES.PASSWORD_MESSAGE.tooLongPassword);
+                } else {
+                    return error(fieldName, value, MESSAGES.PASSWORD_MESSAGE.tooShortPassword);
+                }
+            }
+            return error(fieldName, value, MESSAGES.PASSWORD_MESSAGE.invalidPassword);
         default:
             return false;
     }
