@@ -103,10 +103,11 @@ class Login extends Component {
                         }
                     },
                     errorBorder: {
+                        ...errorBorder,
                         [name]: {
-                            borderBottom: "2px solid red"
+                            borderBottom: "2px solid red",
                         }
-                    }
+                    },
                 });
                 return;
             }
@@ -130,7 +131,7 @@ class Login extends Component {
                     [name]: {
                         borderBottom: "2px solid rgba(255,255,255,0.24)",
                     }
-                }
+                },
             })
         } else {
             this.setState({
@@ -145,10 +146,11 @@ class Login extends Component {
                     }
                 },
                 errorBorder: {
+                    ...errorBorder,
                     [name]: {
-                        borderBottom: "2px solid red"
+                        borderBottom: "2px solid red",
                     }
-                }
+                },
             })
         }
     };
