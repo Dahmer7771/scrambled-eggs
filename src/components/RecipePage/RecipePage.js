@@ -9,7 +9,25 @@ import CustomHR from "../CustomHR/CustomHR";
 class RecipePage extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            like: "zmdi zmdi-favorite-outline",
+        };
+    }
+
+    showLike = () => {
+        const {
+            like,
+        } = this.state;
+
+        if (like === "zmdi zmdi-favorite-outline") {
+            this.setState( {
+                like: "zmdi zmdi-favorite",
+            })
+        } else {
+            this.setState({
+                like: "zmdi zmdi-favorite-outline"
+            })
+        }
     }
 
     render() {
@@ -21,6 +39,10 @@ class RecipePage extends React.Component{
             return <div>Sorry, but the recipe was not found</div>
         }
 
+        const {
+            like,
+        } = this.state;
+
         return (
             <React.Fragment>
                 <Header />
@@ -28,18 +50,24 @@ class RecipePage extends React.Component{
                     <div className="recipe-block container">
                         <div className="row">
                             <figure className="title col-xl-4">
-                                <figcaption className="recipe-title">
-                                    <h2>
-                                        {recipe.title}
-                                    </h2>
-                                </figcaption>
                                 <img src={Dish} className="dish-img" />
                             </figure>
                             <div className="recipe-description col-xl-6">
-                                {recipe.description}
+                                <div className="recipe-title">
+                                    <h2>
+                                        {recipe.title} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque cupiditate dolor nulla odit officiis perspiciatis qui repellat repellendus,
+                                    </h2>
+                                </div>
+                                <h6>
+                                    {recipe.description}
 
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi atque deleniti iste iusto nihil pariatur perspiciatis sed sunt tenetur? Animi dignissimos harum inventore iusto perspiciatis qui reprehenderit sapiente voluptate.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda blanditiis delectus dicta ea eos est, expedita magni, nobis omnis reiciendis sit? Adipisci autem esse exercitationem facere quaerat rerum unde.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi atque deleniti iste iusto nihil pariatur perspiciatis sed sunt tenetur? Animi dignissimos harum inventore iusto perspiciatis qui reprehenderit sapiente voluptate.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda blanditiis delectus dicta ea eos est, expedita magni, nobis omnis reiciendis sit? Adipisci autem esse exercitationem facere quaerat rerum unde.
+
+                                </h6>
+                                <i className={`like ${like}`} onClick={this.showLike}>
+
+                                </i>
                             </div>
                         </div>
                     </div>
