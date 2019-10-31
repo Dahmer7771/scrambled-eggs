@@ -29,8 +29,9 @@ footer {
 .footer-content {
     color: white;
     position: relative;
-    left: 100px;
     max-width: 1140px;
+    justify-content: right;
+    padding-left: 120px;
 }
 
 .phone {
@@ -65,7 +66,6 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: left;
 }
 
 .social-network_content i {
@@ -88,6 +88,99 @@ footer {
     bottom: 0;
     margin-right: 10px;
 }
+
+@media all and (max-width: 960px) {
+    .logo-footer {
+        width: 65px;
+        height: 80px;
+
+    }
+
+
+    .contacts h4{
+        font-size: 15px;
+    }
+
+    .phone p {
+        font-size: 10px;
+    }
+
+    .phone a {
+        font-size: 10px;
+    }
+
+    .phone i {
+        font-size: 12px;
+    }
+
+    .social-network h4 {
+        font-size: 15px;
+    }
+
+    .social-network_content i {
+        font-size: 16px;
+        padding-right: 8px;
+    }
+
+    .author {
+        font-size: 9px;
+    }
+}
+
+@media all and (max-width: 720px) {
+    .logo-footer {
+        width: 55px;
+        height: 65px;
+        margin: 5px;
+        margin-top: 18px;
+    }
+
+
+    .contacts h4{
+        font-size: 12px;
+    }
+
+    .phone p {
+        font-size: 8px;
+    }
+
+    .phone a {
+        font-size: 8px;
+    }
+
+    .phone i {
+        font-size: 10px;
+    }
+
+    .social-network h4 {
+        font-size: 12px;
+    }
+
+    .social-network_content i {
+        font-size: 14px;
+        padding-right: 5px;
+    }
+
+    .author {
+        font-size: 9px;
+    }
+}
+
+@media all and (max-width: 540px) {
+    .footer-content {
+        padding-left: 80px;
+    }
+
+    .social-network {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .author {
+        padding-top: 100px;
+    }
+}
+
 
 
 

@@ -17,10 +17,10 @@ class Footer extends React.Component{
           <img className="logo-footer"  src={Logo} alt=""/>
         </figure>
         <p className="author">
-          @ Сreated by 6 subgroups specifically for the TSS lesson
+          @ Сreated by 5 subgroups specifically for the TSS lesson
         </p>
-        <div className="footer-content row justify-content-center">
-          <div className="contacts col-xl-5">
+        <div className="footer-content row ">
+          <div className="contacts col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
               <h4>
                 Contact
               </h4>
@@ -30,7 +30,7 @@ class Footer extends React.Component{
                 <a href="https://mail.google.com"><i className="zmdi zmdi-google-plus-box"></i>valerka@gmail.com</a>
               </div>
           </div>
-          <div className="social-network col-xl-5">
+          <div className="social-network col-xl-4 col-lg-4 col-md-4 col-sm-4 col-5">
             <h4>
               Social network
             </h4>

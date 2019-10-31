@@ -2,6 +2,7 @@
     position: relative;
     top:100px;
     flex: 1 0 auto;
+    margin-bottom: 15px;
 }
 
 .recipes-section h3 {
@@ -13,6 +14,8 @@
     color: #5b5b5b;
     text-align: center;
     padding: 10px 20px 10px 20px;
+    width: 300px;
+    font-size: 15px;
 }
 
 .recommended:hover, .new-recipes:hover, .popular:hover {
@@ -32,4 +35,59 @@
     margin-top: 25px;
     box-shadow: 0 5px 10px rgba(55, 55, 55, 0.64);
 
+}
+
+
+@media all and (max-width: 1140px) {
+    .recommended, .new-recipes, .popular  {
+        font-size: 15px;
+    }
+    .category {
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+}
+
+@media all and (max-width: 960px) {
+    .recommended, .new-recipes, .popular  {
+        font-size: 13px;
+    }
+
+    .category {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+}
+
+@media all and (max-width: 720px) {
+    .category {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    .recommended, .new-recipes, .popular  {
+        font-size: 9px;
+    }
+}
+
+@media all and (max-width: 720px) {
+    .category {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    .recommended, .new-recipes, .popular  {
+        font-size: 9px;
+    }
+}
+
+@media all and (max-width: 540px) {
+    .category {
+        margin-right: 8%;
+        margin-left: 8%;
+    }
+
+    .recommended, .new-recipes, .popular  {
+        font-size: 5px;
+    }
 }

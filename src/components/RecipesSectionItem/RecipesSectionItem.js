@@ -43,26 +43,29 @@ class RecipesSectionItem extends Component {
 
 
         return (
-            <section className="recipes-section-item col-xl-5">
-                <img
-                    className="recipe-image"
-                    src={Dish}
-                    alt="qwe"
-                />
-                <figcaption >
-                    <Link
-                        to={this.state.link}
-                        className="recipe-title"
-                    >
-                        Классический крабовый салат с огурцом и мидиями
-                    </Link>
-                    <div className="recipe-description">
-                        Здесь описывается рецепт...Здесь описывается рецепт...Здесь описывается рецепт...
+            <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                <section className="recipes-section-item">
+                    <img
+                        className="recipe-image"
+                        src={Dish}
+                        alt="qwe"
+                    />
+                    <figcaption >
+                        <Link
+                            to={this.state.link}
+                            className="recipe-title"
+                        >
+                            Классический крабовый салат с огурцом
+                        </Link>
+                        <div className="recipe-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cumque facere saepe sed. Consectetur cumque eos, eum exercitationem magni nihil, non nulla quas quasi quia quibusdam quo quos sint veritatis.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam consequuntur dolore eius et expedita in, magni minus nesciunt, officia praesentium quasi quisquam quo rem similique, sint ut velit voluptatem!
+                        </div>
+                    </figcaption>
+                    <div className={`like ${like}`}  onClick={this.showLike}>
                     </div>
-                </figcaption>
-                <div className={`like ${like}`}  onClick={this.showLike}>
-                </div>
-            </section>
+                </section>
+            </div>
         );
     }
 }
