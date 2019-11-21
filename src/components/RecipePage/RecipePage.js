@@ -47,12 +47,12 @@ class RecipePage extends React.Component{
             <React.Fragment>
                 <Header />
                 <main>
-                    <div className="recipe-block container">
+                    <div className="recipe-block-any container">
                         <div className="row">
-                            <figure className="title col-xl-4">
+                            <figure className="title col-xl-4 col-lg-5 col-md-12 col-sm-12 col-12">
                                 <img src={Dish} className="dish-img" />
                             </figure>
-                            <div className="recipe-description col-xl-6">
+                            <div className="recipe-description-any col-xl-8 col-lg-7 col-lg-7 col-md-12 col-sm-12 col-12">
                                 <div className="recipe-title">
                                     <h2>
                                         {recipe.title} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque cupiditate dolor nulla odit officiis perspiciatis qui repellat repellendus,
@@ -65,9 +65,7 @@ class RecipePage extends React.Component{
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda blanditiis delectus dicta ea eos est, expedita magni, nobis omnis reiciendis sit? Adipisci autem esse exercitationem facere quaerat rerum unde.
 
                                 </h6>
-                                <i className={`like ${like}`} onClick={this.showLike}>
-
-                                </i>
+                                <i className={`like_recipe ${like}`} onClick={this.showLike}></i>
                             </div>
                         </div>
                     </div>
